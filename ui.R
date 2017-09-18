@@ -20,35 +20,42 @@ shinyUI(
     
     tabPanel("Text Prediction",
                fluidRow(
-               column(4),
+               column(2, h4("Enter text:"),                   
+                      br(),
+                      br(),
+                      br(),
+                      br(),                    
+                      h4("Predicted next word:"),
+                      br(),
+                      br(),
+                      br(),
+                      br(),  
+                      h4("Text entered:")
+                      ),
                column(
                  5,
                  tags$div(
                    textInput(
                      "text",
-                     label = h4("Enter text:"),
-                     value =
+                     label = h4(""), value =
                    ),
-                   tags$span( ("Language: English")),
                    br(),
                    br(),
                    br(),                   
-                   tags$hr(),
-                   h4("Predicted next word:"),
                    tags$span(style = "color:green",
-                             tags$strong(tags$h2(
-                               textOutput("predWord")
-                             ))),
+                             textOutput("predWord")
+                             ),
                    br(),
                    br(),
                    br(),                   
-                   tags$hr(),
-                   h4("Text entered:"),
+                   br(),
                    tags$em(tags$h4(textOutput("txtEntered"))),
-                   align = "center"
+                   align = "left"
                  )
                ),
-               column(4)
+               column(4
+
+                      )
              ))
   )
 )
